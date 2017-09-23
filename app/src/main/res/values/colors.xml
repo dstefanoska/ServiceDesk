@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#4CAF50</color>
-    <color name="primaryDark">#388E3C</color>
-    <color name="primary_light">#C8E6C9</color>
-    <color name="accent">#8BC34A</color>
-    <color name="primary_text">#212121</color>
-    <color name="secondary_text">#757575</color>
-    <color name="icons">#FFFFFF</color>
-    <color name="divider">#BDBDBD</color>
+    <!--Toolbar gradient and main colors-->
+    <color name="primary">#00aeef</color>
+    <color name="primaryDark">#108aac</color>
+
+    <!--Default android colors-->
+    <color name="primary_text">#404040</color>
+    <color name="secondary_text">#808080</color>
+    <color name="accent">#00aeef</color>
+
+    <!--menu button background/text colors-->
+    <color name="menuTextDark">#404040</color>
+    <color name="menuTextWhite">#ffffff</color>
+    <color name="menuBackground">#ffffff</color>
+    <color name="menuSelectedButton">#29abe2</color>
+    <color name="menuButton">#ebebeb</color>
+    <color name="log_out">#d6d6d6</color>
+
+    <!--table colors-->
+    <color name="tableDarkRow">#ebebeb</color>
+    <color name="tableLightRow">#fafafa</color>
+    <color name="tableLightText">#a3a3a3</color>
+    <color name="tableDarkText">#404040</color>
+    <color name="divider">#c7c8ca</color>
+
+    <!--button colors-->
+    <color name="buttonBackground">#808080</color>
+
+    <!--other colors-->
     <color name="error">#ff8a80</color>
-    <color name="positive">#00c853</color>
-    <color name="white_opacity">#ddffffff</color>
-    <color name="black_opacity">#dd000000</color>
-    <color name="item_background">#e5e5e5</color>
-    <color name="transparent">#00000000</color>
+
 </resources>

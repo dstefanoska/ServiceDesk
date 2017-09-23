@@ -78,8 +78,4 @@ public class Daka {
                 RequestBody.create(MediaType.parse("multipart/form-data"), file);
         return MultipartBody.Part.createFormData("file", file.getName(), requestFile);
     }
-
-    public static Config getConfig() {
-        return config;
-    }
 }

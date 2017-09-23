@@ -15,16 +15,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login.LoginActivity">
+        <activity android:name=".login.LoginActivity"
+            android:label="@string/login_activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".home.HomeActivity"
+            android:label="@string/home_activity" />
+
+        <activity
+            android:name=".modules.services.ServicesActivity"
+            android:label="@string/services_activity" />
+
+        <activity
+            android:name=".modules.sos.SosActivity"
+            android:label="@string/sos_activity" />
+
+        <activity
+            android:name=".modules.tasks.TasksActivity"
+            android:label="@string/tasks_activity" />
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="bfc7a688d74f9fe58cac9557c404a5e68fc913ae" />
     </application>
+
 
 </manifest>

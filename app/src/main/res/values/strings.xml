@@ -1,3 +1,33 @@
 <resources>
+    <!--Application name and activities-->
     <string name="app_name">Service Desk</string>
+    <string name="login_activity">Логирај се</string>
+    <string name="home_activity">Почетна</string>
+    <string name="tasks_activity">Таскови</string>
+    <string name="services_activity">Сервиси</string>
+    <string name="sos_activity">Служба за спасување</string>
+
+    <!--Login strings-->
+    <string name="sign_in">Најави се</string>
+    <string name="user_name">Корисничко име</string>
+    <string name="password">Лозинка</string>
+
+    <!--Errors-->
+    <string name="error_no_network">Вклучете го интернетот на телефонот и обидете се повторно</string>
+    <string name="error_wrong_userName_password">Внесовте погрешно корисничко име или лозинка</string>
+
+    <!--Menu items-->
+    <string name="menu_tasks">Таскови</string>
+    <string name="menu_services">Сервисирања</string>
+    <string name="menu_sos">Служба за спасување</string>
+    <string name="menu_log_out">Одлогирај се</string>
+    <string name="menu_home">Почетна</string>
+    <string name="navigation_drawer_open">Отвори го менито</string>
+    <string name="navigation_drawer_close">Затвори го менито</string>
+    
+    <!--Tasks-->
+    <string name="tab_delayed_tasks">Закажани таскови</string>
+    <string name="tab_open_task">Отворен таск</string>
+    <string name="tab_archived_task">Архивирани таскови</string>
+
 </resources>
