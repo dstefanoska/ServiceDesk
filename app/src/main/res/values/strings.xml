@@ -15,8 +15,10 @@
     <!--Errors-->
     <string name="error_no_network">Вклучете го интернетот на телефонот и обидете се повторно</string>
     <string name="error_wrong_userName_password">Внесовте погрешно корисничко име или лозинка</string>
+    <string name="error_field_empty">Полето не смее да биде празно</string>
 
     <!--Menu items-->
+    <string name="menu">Мени </string>
     <string name="menu_tasks">Таскови</string>
     <string name="menu_services">Сервисирања</string>
     <string name="menu_sos">Служба за спасување</string>
@@ -24,10 +26,36 @@
     <string name="menu_home">Почетна</string>
     <string name="navigation_drawer_open">Отвори го менито</string>
     <string name="navigation_drawer_close">Затвори го менито</string>
-    
+
     <!--Tasks-->
     <string name="tab_delayed_tasks">Закажани таскови</string>
     <string name="tab_open_task">Отворен таск</string>
     <string name="tab_archived_task">Архивирани таскови</string>
+    <string name="no_tasks">Немате таскови за прикажување</string>
+    <string name="no_open_task">Немате отворен таск</string>
+    <string name="end_task">Заврши таск</string>
+    <string name="new_task">Отвори нов таск</string>
+    <string name="directions">Навигација</string>
+
+    <!--Task View-->
+    <string name="title">Име на таск: </string>
+    <string name="location">Локација: </string>
+    <string name="notes">Забелешки: </string>
+    <string name="building">Име на зграда: </string>
+    <string name="elevator">Тип на лифт: </string>
+    <string name="servicer">Сервисер/и: </string>
+
+    <!--Dialogs-->
+    <string name="ok">Во ред</string>
+    <string name="cancel">Откажи</string>
+    <string name="confirmation">Дали сте сигурни?</string>
+    <string name="yes">Да</string>
+    <string name="no">Не</string>
+    <string name="send">Испрати sos</string>
+
+    <!--Toasts-->
+    <string name="toast_end_task">Тукушто го завршивте таскот</string>
+    <string name="sos_sending">Sos пораките се испраќаат </string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

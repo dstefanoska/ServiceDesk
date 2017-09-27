@@ -1,11 +1,10 @@
 package com.daka.servicedesk.login;
 
+import android.app.Activity;
 import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -13,25 +12,21 @@ import android.widget.ProgressBar;
 import com.crashlytics.android.Crashlytics;
 import com.daka.sdk.models.User;
 import com.daka.servicedesk.R;
-import com.daka.servicedesk.base.activities.BaseActivity;
-import com.daka.servicedesk.home.HomeActivityIntentBuilder;
+import com.daka.servicedesk.modules.tasks.TasksActivityIntentBulder;
 import com.daka.servicedesk.utils.NetworkUtil;
 import com.daka.servicedesk.utils.SnackBarUtil;
 import com.daka.servicedesk.utils.Store;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.fabric.sdk.android.Fabric;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends Activity {
 
     @BindView(R.id.progress)
     ProgressBar progress;
-    @BindView(R.id.input_user_name)
-    TextInputEditText userName;
+    @BindView(R.id.input_username)
+    TextInputEditText username;
     @BindView(R.id.input_password)
     TextInputEditText password;
     @BindView(R.id.button_login)
@@ -46,16 +41,19 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
+        if(Store.user() != null) {
+            startTaskActivity();
+            return;
+        }
+
         login.setOnClickListener(view -> {
             if(!NetworkUtil.hasNetwork()) {
                 SnackBarUtil.showError(linearLayout, R.string.error_no_network);
-            } else if(!TextUtils.isEmpty(userName.getText().toString()) && !TextUtils.isEmpty(password.getText().toString())){
-                User user = new User();
-                user.setUserName(userName.getText().toString());
-                user.setPassword(password.getText().toString());
+            } else if(!TextUtils.isEmpty(username.getText().toString()) && !TextUtils.isEmpty(password.getText().toString())){
+                //change dummy call with API call
+                Store.user(dummyUser());
 
-                Store.user(user);
-                startHomeActivity();
+                startTaskActivity();
             } else {
                 SnackBarUtil.showError(linearLayout, R.string.error_wrong_userName_password);
             }
@@ -70,8 +68,18 @@ public class LoginActivity extends BaseActivity {
         progress.setVisibility(View.GONE);
     }
 
-    private void startHomeActivity() {
-        new HomeActivityIntentBuilder(this).start();
+    private void startTaskActivity() {
+        new TasksActivityIntentBulder(this).start();
         finish();
     }
+
+    private User dummyUser() {
+        User user = new User();
+        user.setUsername(username.getText().toString());
+        user.setPassword(password.getText().toString());
+        user.setName("Dana Stefanoska");
+
+        return user;
+    }
+
 }

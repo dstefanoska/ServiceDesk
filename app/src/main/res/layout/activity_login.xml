@@ -19,22 +19,23 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/daka_logo_96"
+        android:src="@drawable/daka_logo"
         android:layout_weight="1.5" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:hint="@string/user_name"
-        android:textColorHint="@color/menuTextWhite">
+        android:textColorHint="@color/menuTextWhite"
+        app:hintTextAppearance="@style/MyAppearance">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/input_user_name"
+            android:id="@+id/input_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
+            android:hint="@string/user_name"
             android:textColor="@color/menuTextWhite"
             android:inputType="text" />
     </android.support.design.widget.TextInputLayout>
@@ -43,8 +44,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:hint="@string/password"
-        android:textColorHint="@color/menuTextWhite">
+        android:textColorHint="@color/menuTextWhite"
+        app:hintTextAppearance="@style/MyAppearance">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/input_password"
@@ -52,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
+            android:hint="@string/password"
             android:textColor="@color/menuTextWhite"
             android:inputType="textPassword" />
     </android.support.design.widget.TextInputLayout>
@@ -63,6 +65,6 @@
         android:background="@color/menuBackground"
         android:text="@string/sign_in"
         android:layout_margin="40dp"
-        android:textColor="@color/menuTextDark" />
+        android:textColor="@color/primaryDark" />
 
 </LinearLayout>
