@@ -16,6 +16,7 @@
     <string name="error_no_network">Вклучете го интернетот на телефонот и обидете се повторно</string>
     <string name="error_wrong_userName_password">Внесовте погрешно корисничко име или лозинка</string>
     <string name="error_field_empty">Полето не смее да биде празно</string>
+    <string name="error_may_no_work_properly">Без интернет конекција апликацијата може да не работи прописно</string>
 
     <!--Menu items-->
     <string name="menu">Мени </string>
@@ -37,13 +38,25 @@
     <string name="new_task">Отвори нов таск</string>
     <string name="directions">Навигација</string>
 
+    <!--Task popup strings-->
+    <string name="accept_task">Прифати го таскот</string>
+    <string name="accept_delay_task">Прифати го таскот со задоцнување</string>
+    <string name="decline_task">Откажи го таскот</string>
+    <string name="comment">Коментар</string>
+    <string name="delay">Задоцнување</string>
+    <string name="task">ТАСК</string>
+
     <!--Task View-->
     <string name="title">Име на таск: </string>
     <string name="location">Локација: </string>
+    <string name="city">Град: </string>
     <string name="notes">Забелешки: </string>
     <string name="building">Име на зграда: </string>
     <string name="elevator">Тип на лифт: </string>
     <string name="servicer">Сервисер/и: </string>
+    <string name="address">Адреса</string>
+    <string name="building_name">Име на зграда</string>
+    <string name="search_by">Пребарај по:</string>
 
     <!--Dialogs-->
     <string name="ok">Во ред</string>
@@ -57,5 +70,9 @@
     <string name="toast_end_task">Тукушто го завршивте таскот</string>
     <string name="sos_sending">Sos пораките се испраќаат </string>
     <string name="title_activity_maps">Map</string>
+
+    <!--Services-->
+    <string name="elevator_code">Код</string>
+    <string name="elevator_machine">Машина</string>
 
 </resources>

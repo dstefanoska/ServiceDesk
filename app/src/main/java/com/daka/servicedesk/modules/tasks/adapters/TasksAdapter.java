@@ -58,10 +58,10 @@ public class TasksAdapter extends BaseAdapter {
             holder = (ViewHolder) row.getTag();
         }
 
-        Task task = tasks.get(position);
-        holder.title.setText(context.getString(R.string.title), task.getTitle());
-        holder.location.setText(context.getString(R.string.location), task.getBuilding().getLocationName());
-        holder.notes.setText(context.getString(R.string.notes), task.getNotes());
+//        Task task = tasks.get(position);
+//        holder.title.setText(context.getString(R.string.title), task.getTitle());
+//        holder.location.setText(context.getString(R.string.location), task.getBuilding().getLocationName());
+//        holder.notes.setText(context.getString(R.string.notes), task.getNotes());
         return row;
     }
 

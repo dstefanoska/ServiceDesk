@@ -150,8 +150,8 @@ public class BaseActivity extends AppCompatActivity{
             ButterKnife.bind(this, headerView);
 
             User user = Store.user();
-            title.setText(user.getUsername() != null ? user.getUsername() : "");
-            subtitle.setText(user.getName() != null ? user.getName() : "");
+            title.setText(user.getRoleName() != null ? user.getRoleName() : "");
+            subtitle.setText(user.getRoleId() != 0 ? String.valueOf(user.getRoleId()) : "");
         }
     }
 

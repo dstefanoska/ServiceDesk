@@ -19,7 +19,6 @@ import rx.Subscriber;
 
 public class PermissionsObservable implements Observable.OnSubscribe<Void> {
 
-
     private final Activity activity;
     private final String[] permissions;
 

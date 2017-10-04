@@ -1,59 +1,47 @@
 package com.daka.sdk.models;
 
-import com.google.gson.annotations.SerializedName;
-
 /**
- * Created by Dana on 23-Sep-17.
+ * Created by Dana on 30-Sep-17.
  */
 
 public class Servicer {
-    @SerializedName("AssignationId")
-    int id;
-    int taskId;
-    String servicePersonId;
-    int taskStateId;
-    int commentId;
+    String userId;
+    int roleId;
+    String roleName;
+    String name;
 
     public Servicer() {
     }
 
-    public int getId() {
-        return id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public int getTaskId() {
-        return taskId;
+    public int getRoleId() {
+        return roleId;
     }
 
-    public void setTaskId(int taskId) {
-        this.taskId = taskId;
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
-    public String getServicePersonId() {
-        return servicePersonId;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setServicePersonId(String servicePersonId) {
-        this.servicePersonId = servicePersonId;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
-    public int getTaskStateId() {
-        return taskStateId;
+    public String getName() {
+        return name;
     }
 
-    public void setTaskStateId(int taskStateId) {
-        this.taskStateId = taskStateId;
-    }
-
-    public int getCommentId() {
-        return commentId;
-    }
-
-    public void setCommentId(int commentId) {
-        this.commentId = commentId;
+    public void setName(String name) {
+        this.name = name;
     }
 }

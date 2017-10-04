@@ -1,5 +1,7 @@
 package com.daka.sdk.models;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 /**
@@ -8,12 +10,13 @@ import java.util.List;
 
 public class Task {
 
+    @SerializedName("taskId")
     int id;
+    int elevatorId;
+    String dueDate;
     String title;
     String notes;
-    Building building;
-    Elevator elevator;
-    List<Servicer> servicers;
+    List<Assignee> assignees;
     int numberOfAssignees;
 
     public Task() {
@@ -25,6 +28,22 @@ public class Task {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getElevatorId() {
+        return elevatorId;
+    }
+
+    public void setElevatorId(int elevatorId) {
+        this.elevatorId = elevatorId;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
     }
 
     public String getTitle() {
@@ -43,28 +62,12 @@ public class Task {
         this.notes = notes;
     }
 
-    public Building getBuilding() {
-        return building;
+    public List<Assignee> getAssignees() {
+        return assignees;
     }
 
-    public void setBuilding(Building building) {
-        this.building = building;
-    }
-
-    public Elevator getElevator() {
-        return elevator;
-    }
-
-    public void setElevator(Elevator elevator) {
-        this.elevator = elevator;
-    }
-
-    public List<Servicer> getServicers() {
-        return servicers;
-    }
-
-    public void setServicers(List<Servicer> servicers) {
-        this.servicers = servicers;
+    public void setAssignees(List<Assignee> assignees) {
+        this.assignees = assignees;
     }
 
     public int getNumberOfAssignees() {

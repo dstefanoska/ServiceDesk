@@ -33,7 +33,6 @@ public class Daka {
 
     public static Gson gson() {
         Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
-
         return gson;
     }
 
@@ -41,6 +40,7 @@ public class Daka {
         Retrofit.Builder retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson()))
                 .client(authClient().build());
+
         //retrofit.addCallAdapterFactory(new RxThreadCallAdapater(Schedulers.io(), AndroidSchedulers.mainThread()));
         retrofit.addCallAdapterFactory(RxJavaCallAdapterFactory.create());
         return retrofit;

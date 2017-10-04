@@ -10,7 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import com.crashlytics.android.Crashlytics;
+import com.daka.sdk.auth.TokenAuthenticationProvider;
 import com.daka.sdk.models.User;
+import com.daka.sdk.models.wrappers.UserModel;
+import com.daka.sdk.services.Daka;
 import com.daka.servicedesk.R;
 import com.daka.servicedesk.modules.tasks.TasksActivityIntentBulder;
 import com.daka.servicedesk.utils.NetworkUtil;
@@ -20,6 +23,10 @@ import com.daka.servicedesk.utils.Store;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.fabric.sdk.android.Fabric;
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+import timber.log.Timber;
 
 public class LoginActivity extends Activity {
 
@@ -49,15 +56,51 @@ public class LoginActivity extends Activity {
         login.setOnClickListener(view -> {
             if(!NetworkUtil.hasNetwork()) {
                 SnackBarUtil.showError(linearLayout, R.string.error_no_network);
-            } else if(!TextUtils.isEmpty(username.getText().toString()) && !TextUtils.isEmpty(password.getText().toString())){
-                //change dummy call with API call
-                Store.user(dummyUser());
+            } else if(isValid(username, password)) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        UserModel model = new UserModel();
+                        model.setUsername(username.getText().toString());
+                        model.setPassword(password.getText().toString());
 
-                startTaskActivity();
-            } else {
-                SnackBarUtil.showError(linearLayout, R.string.error_wrong_userName_password);
+                        loginUser(model)
+                                .subscribeOn(Schedulers.io())
+                                .observeOn(AndroidSchedulers.mainThread())
+                                .doOnSubscribe(() -> {
+                                    progress.setVisibility(View.VISIBLE);
+                                })
+                                .doOnTerminate(() -> {
+                                    progress.setVisibility(View.GONE);
+                                })
+                                .subscribe(response -> {
+                                    Store.user(response);
+                                    TokenAuthenticationProvider.getInstance().setToken(response.getToken());
+                                    startTaskActivity();
+                                }, throwable -> {
+                                    Timber.d("Login user throwable", throwable);
+                                    SnackBarUtil.showError(linearLayout, R.string.error_wrong_userName_password);
+                                });
+                    }
+                });
             }
         });
+    }
+
+    private boolean isValid (TextInputEditText username, TextInputEditText password) {
+        boolean valid = true;
+
+        if(TextUtils.isEmpty(username.getText().toString())){
+            username.setError(getString(R.string.error_field_empty));
+            valid = false;
+        }
+
+        if(TextUtils.isEmpty(password.getText().toString())){
+            password.setError(getString(R.string.error_field_empty));
+            valid = false;
+        }
+
+        return valid;
     }
 
     private void showProgress() {
@@ -73,13 +116,7 @@ public class LoginActivity extends Activity {
         finish();
     }
 
-    private User dummyUser() {
-        User user = new User();
-        user.setUsername(username.getText().toString());
-        user.setPassword(password.getText().toString());
-        user.setName("Dana Stefanoska");
-
-        return user;
+    private Observable<User> loginUser (UserModel model) {
+        return Daka.getApiService().login(model);
     }
-
 }

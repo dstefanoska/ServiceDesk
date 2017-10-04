@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <FrameLayout
+        android:id="@+id/tasks_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tasks_tabs_container" />
+
+    <LinearLayout
+        android:background="@color/primary"
+        android:id="@+id/tasks_tabs_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:id="@+id/btn_open_task"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tab_open_task"
+            android:textAllCaps="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:id="@+id/btn_delayed_tasks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tab_delayed_tasks"
+            android:textAllCaps="true"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:id="@+id/btn_archived_tasks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tab_archived_task"
+            android:textAllCaps="true"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</RelativeLayout>

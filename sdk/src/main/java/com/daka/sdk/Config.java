@@ -5,17 +5,11 @@ package com.daka.sdk;
  */
 
 public class Config {
-
-    private String url;
-    private String authority;
+    private static String url = "http://daka-demo-api.azurewebsites.net/api/";
+            //"http://daka-demo-api.azurewebsites.net/swagger/docs/v1/api/";
     private boolean logEnabled;
 
     public Config() {
-    }
-
-    public Config setUrl(String url) {
-        this.url = url;
-        return this;
     }
 
     public Config setLogEnabled(boolean logEnabled) {
@@ -29,13 +23,5 @@ public class Config {
 
     public String getUrl() {
         return url;
-    }
-
-    public String getAuthority() {
-        return authority;
-    }
-
-    public void setAuthority(String authority) {
-        this.authority = authority;
     }
 }

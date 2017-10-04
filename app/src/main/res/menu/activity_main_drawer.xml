@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_tasks"
+        android:title="@string/menu_tasks"
+        android:icon="@drawable/taskicon_gray"
+        android:checkable="true"/>
+
+    <item
+        android:id="@+id/menu_services"
+        android:title="@string/menu_services"
+        android:icon="@drawable/serviseriicon_gray"
+        android:checkable="true"/>
+
+    <item
+        android:id="@+id/menu_sos"
+        android:title="@string/menu_sos"
+        android:icon="@drawable/izvestuvanje_icon_gray"
+        android:checkable="true"/>
+
+    <item
+        android:id="@+id/menu_log_out"
+        android:title="@string/menu_log_out"
+        android:icon="@drawable/odlogiraj_icon_gray"
+        android:checkable="true"/>
+
+</menu>

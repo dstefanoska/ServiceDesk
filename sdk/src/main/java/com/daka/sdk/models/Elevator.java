@@ -15,8 +15,8 @@ public class Elevator {
     boolean doors;
     String installationDate;
     String tableType;
-//    int buildingId;
-//    String buildingName;
+    int buildingId;
+    String buildingName;
 
     public Elevator() {
     }
@@ -99,5 +99,21 @@ public class Elevator {
 
     public void setTableType(String tableType) {
         this.tableType = tableType;
+    }
+
+    public int getBuildingId() {
+        return buildingId;
+    }
+
+    public void setBuildingId(int buildingId) {
+        this.buildingId = buildingId;
+    }
+
+    public String getBuildingName() {
+        return buildingName;
+    }
+
+    public void setBuildingName(String buildingName) {
+        this.buildingName = buildingName;
     }
 }

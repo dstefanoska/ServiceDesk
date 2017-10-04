@@ -23,7 +23,7 @@ public class TokenAuthenticationProvider implements Interceptor {
         if (TokenAuthenticationProvider.getInstance().isTokenValid()) {
             Request request = chain.request();
             request = request.newBuilder()
-                    .addHeader("Authorization", "Bearer " + TokenAuthenticationProvider.getInstance().getToken())
+                    .addHeader("Authorization", TokenAuthenticationProvider.getInstance().getToken())
                     .build();
             return chain.proceed(request);
         }

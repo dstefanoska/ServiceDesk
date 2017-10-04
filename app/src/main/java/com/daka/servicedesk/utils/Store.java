@@ -1,5 +1,8 @@
 package com.daka.servicedesk.utils;
 
+import com.daka.sdk.models.Building;
+import com.daka.sdk.models.Location;
+import com.daka.sdk.models.Servicer;
 import com.daka.sdk.models.Task;
 import com.daka.sdk.models.User;
 import com.orhanobut.hawk.Hawk;
@@ -16,6 +19,9 @@ public class Store {
     private static final String KEY_OPEN_TASK = "key_open_task";
     private static final String KEY_DELAYED_TASKS = "key_delayed_tasks";
     private static final String KEY_ARCHIVED_TASKS = "key_archived_tasks";
+    private static final String KEY_LOCATIONS = "key_locations";
+    private static final String KEY_BUILDINGS = "key_buildings";
+    private static final String KEY_USERS = "key_users";
 
     public static void user(User user) {
         Hawk.put(KEY_USER, user);
@@ -61,5 +67,27 @@ public class Store {
         Hawk.put(KEY_ARCHIVED_TASKS, tasks);
     }
 
+    public static List<Location> locations() {
+        return Hawk.get(KEY_LOCATIONS, new ArrayList<Location>());
+    }
 
+    public static void locations(List<Location> locations) {
+        Hawk.put(KEY_LOCATIONS, locations);
+    }
+
+    public static List<Building> buildings() {
+        return Hawk.get(KEY_BUILDINGS, new ArrayList<Building>());
+    }
+
+    public static void buildings (List<Building> buildings) {
+        Hawk.put(KEY_BUILDINGS, buildings);
+    }
+
+    public static List<Servicer> users() {
+        return Hawk.get(KEY_USERS, new ArrayList<Servicer>());
+    }
+
+    public static void users(List<Servicer> users) {
+        Hawk.put(KEY_USERS, users);
+    }
 }
